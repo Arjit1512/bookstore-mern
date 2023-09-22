@@ -22,7 +22,7 @@ const CreateBooks = () => {
     setLoading(true);
 
     axios
-    .post('http://localhost:5555/books',data)
+    .post('https://bookstore-mern-4qn8.onrender.com/books',data)
     
     .then( () => {
       setLoading(false);
