@@ -19,7 +19,7 @@ const EditBook = () => {
     setLoading(true);
 
     axios
-    .get(`http://localhost:5555/books/${id}`)
+    .get(`https://bookstore-mern-4qn8.onrender.com/books/${id}`)
 
     .then( (response) => {
         setTitle(response.data.title);
@@ -47,7 +47,7 @@ const EditBook = () => {
     setLoading(true);
 
     axios
-    .put(`http://localhost:5555/books/${id}`,data)
+    .put(`https://bookstore-mern-4qn8.onrender.com/books/${id}`,data)
     
     .then( () => {
       setLoading(false);
