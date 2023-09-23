@@ -8,12 +8,19 @@ import cors from 'cors';
 
 const app=express();
 app.use(express.json());
+<<<<<<< HEAD
 app.use(cors(
     {
         origin:["http://localhost:5555",
     "https://bookstore-mern-backend.onrender.com"]
     }
 )); //*this should be placed exactly below the app.use(express.json()) only....SPENT 3HRS SPOTTING THIS ERROR
+=======
+app.use(cors({
+        origin:["http://localhost:5555",
+    "https://bookstore-mern-backend.onrender.com"]
+    })); //*this should be placed exactly below the app.use(express.json()) only....SPENT 3HRS SPOTTING THIS ERROR
+>>>>>>> 840bf02fee0a12045277ccdbfe1d394ac4a2c042
 app.get('/', (req,res) => {
     res.send("Welcome to mern stack tutorial");
 })
