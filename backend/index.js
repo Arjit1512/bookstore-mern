@@ -1,6 +1,6 @@
 import express, { request } from 'express';
 
-import {PORT,mongoDBURL} from "./config.js";
+import {port,mongoDBURL} from "./config.js";
 import mongoose from 'mongoose';
 import { Book } from './models/bookModel.js';
 import booksRoute from './routes/booksRoute.js'
@@ -8,20 +8,16 @@ import cors from 'cors';
 
 const app=express();
 app.use(express.json());
-<<<<<<< HEAD
-app.use(cors(
-    {
-        origin:["http://localhost:5555",
-    "https://bookstore-mern-backend.onrender.com"]
-    }
-)); //*this should be placed exactly below the app.use(express.json()) only....SPENT 3HRS SPOTTING THIS ERROR
-=======
-app.use(cors({
-        origin:["http://localhost:5555",
-    "https://bookstore-mern-backend.onrender.com"]
-    })); //*this should be placed exactly below the app.use(express.json()) only....SPENT 3HRS SPOTTING THIS ERROR
->>>>>>> 840bf02fee0a12045277ccdbfe1d394ac4a2c042
-app.get('/', (req,res) => {
+
+app.use(cors());
+  
+
+//app.use(cors());//{
+        //origin:["http://localhost:5555",
+    //"https://bookstore-mern-backend-95dq.onrender.com"]
+   // })); //*this should be placed exactly below the app.use(express.json()) only....SPENT 3HRS SPOTTING THIS ERROR
+
+    app.get('/', (req,res) => {
     res.send("Welcome to mern stack tutorial");
 })
 
@@ -122,8 +118,8 @@ app.use('/books',booksRoute);
 mongoose.connect(mongoDBURL)
 .then( () => {
     console.log('App connected to database');
-    app.listen(PORT, () => {
-        console.log(`App is listening to port: ${PORT}`);
+    app.listen(port, () => {
+        console.log(`App is listening to port: ${port}`);
     })    
 })
 .catch( (error) => {
